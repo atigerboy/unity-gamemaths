@@ -25,7 +25,7 @@ public class SimpleJump : MonoBehaviour
     private float _posX;
     private void MoveUpdate()
     {
-        //_posX += velX * _deltaT;
+        _posX += velX * _deltaT;
         _pos += _vel * _deltaT + 0.5f * _acc * _deltaT * _deltaT;
         float new_acc = NewAcc(_posX);// constant _acc
         _vel += 0.5f * (_acc + new_acc) * _deltaT;
@@ -53,9 +53,9 @@ public class SimpleJump : MonoBehaviour
         transform.position = currentPosition + new Vector3(_posX, _pos, 0);
         if (transform.position.y < -5)
         {
-            enabled = false;
+            if (transform.position.x > 10)
+                transform.position = new Vector3(-4, 0, 0);
             OnEnable();
-            enabled = true;
         }
     }
 

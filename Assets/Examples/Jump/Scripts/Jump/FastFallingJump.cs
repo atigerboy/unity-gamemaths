@@ -63,9 +63,9 @@ public class FastFallingJump : MonoBehaviour
         transform.position = currentPosition + new Vector3(_posX, _pos, 0);
         if (transform.position.y < -5)
         {
-            enabled = false;
+            if (transform.position.x > 10)
+                transform.position = new Vector3(-4, 0, 0);
             OnEnable();
-            enabled = true;
         }
     }
 

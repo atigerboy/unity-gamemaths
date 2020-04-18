@@ -39,7 +39,7 @@ public class DoubleJump : MonoBehaviour
         if (_posX > halfLenghth * 1.3f && accPoint == 0)//change new acc
         {
             accPoint += 1;
-            accArray[accPoint] = Accel(velX, (2 *  halfLenghth - _posX) * 0.5f, topHeight2 );
+            accArray[accPoint] = Accel(velX, halfLenghth * 0.5f, topHeight2 );
             _acc = accArray[accPoint];
             _vel = V0(velX, halfLenghth, topHeight2);
         }
@@ -65,9 +65,9 @@ public class DoubleJump : MonoBehaviour
         transform.position = currentPosition + new Vector3(_posX, _pos, 0);
         if (transform.position.y < -5)
         {
-            enabled = false;
+            if (transform.position.x > 10)
+                transform.position = new Vector3(-4, 0, 0);
             OnEnable();
-            enabled = true;
         }
     }
 }
