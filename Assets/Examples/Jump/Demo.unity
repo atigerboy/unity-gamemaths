@@ -229,7 +229,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   topHeight: 6
-  halfLenghth: 2
+  halfLenghth: 4
   velX: 4
   topHeight2: 8
 --- !u!1 &552140452
